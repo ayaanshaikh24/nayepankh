@@ -14,8 +14,12 @@ export default function Footer() {
           {/* Column 1: Info */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-purple to-brand-orange text-white font-extrabold text-sm">
-                NP
+              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg overflow-hidden border border-slate-700 bg-white">
+                <img
+                  src="/logo.jpg"
+                  alt="NayePankh Foundation Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="font-bold text-white tracking-tight">NayePankh Foundation</span>
             </Link>

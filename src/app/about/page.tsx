@@ -41,33 +41,95 @@ export default function About() {
       <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-brand-orange/5 blur-3xl pointer-events-none" />
 
       {/* Hero Intro */}
-      <section className="py-12 md:py-16 relative z-10">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-orange/15 bg-brand-orange/5 text-brand-orange text-xs font-bold mb-4"
-          >
-            <Scale className="w-3.5 h-3.5" />
-            <span>Transparency & Trust Compliance</span>
-          </motion.div>
-          
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
-          >
-            Empowering Through Trust
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed"
-          >
-            We believe social change is built on strict compliance and public integrity. NayePankh operates as a fully registered, audited, and tax-exempt NGO driven by youths.
-          </motion.p>
+      <section className="relative z-10 pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        {/* Background Image Integration */}
+        <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full z-0 pointer-events-none select-none">
+          <img
+            src="/second_image.avif"
+            alt="NayePankh Foundation volunteers and children together in community setting"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Smooth linear gradient mask blending into the light background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent hidden lg:block" />
+          {/* Mobile view gradient mask overlay to ensure readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/95 to-slate-50 lg:hidden" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+            {/* Hero Left Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-orange/15 bg-brand-orange/5 text-brand-orange text-xs font-bold mb-4"
+              >
+                <Scale className="w-3.5 h-3.5" />
+                <span>Transparency & Trust Compliance</span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4"
+              >
+                Empowering Through Trust
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0"
+              >
+                We believe social change is built on strict compliance and public integrity. NayePankh operates as a fully registered, audited, and tax-exempt NGO driven by youths.
+              </motion.p>
+            </div>
+
+            {/* Hero Right Decorative Panel */}
+            <div className="flex-1 w-full max-w-md lg:max-w-none">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
+                className="relative rounded-3xl border border-slate-200/50 bg-white/70 p-6 sm:p-8 shadow-xl backdrop-blur-sm overflow-hidden"
+              >
+                {/* Decorative gradients */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr from-brand-yellow to-brand-orange opacity-15 rounded-bl-full" />
+                
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2 border-b border-slate-100 pb-3">
+                  <Award className="w-5 h-5 text-brand-purple" />
+                  <span>Statutory Registrations</span>
+                </h3>
+
+                <div className="flex flex-col gap-6">
+                  {[
+                    {
+                      label: "Society Registration",
+                      value: "Reg No: KAP/04397/2021-2022",
+                      desc: "Registered under the Societies Registration Act, 1860 by Govt of UP.",
+                    },
+                    {
+                      label: "12A & 80G Compliant",
+                      value: "Tax-Exempt Donations",
+                      desc: "Donations are eligible for 50% tax exemption under Section 80G of the IT Act.",
+                    },
+                  ].map((stat, i) => (
+                    <div key={i} className="flex gap-4 items-start text-left">
+                      <div className="p-2 bg-brand-orange/10 text-brand-orange rounded-xl shrink-0 mt-0.5 font-bold text-xs w-6 h-6 flex items-center justify-center">
+                        ✓
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-slate-800">{stat.label}</h4>
+                        <div className="text-xs font-bold text-brand-purple mt-0.5">{stat.value}</div>
+                        <p className="text-xs text-slate-500 leading-relaxed mt-1">{stat.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 

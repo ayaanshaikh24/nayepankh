@@ -44,8 +44,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group relative z-50">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-purple to-brand-orange text-white shadow-md shadow-brand-purple/20 group-hover:scale-105 transition-transform duration-300">
-              <span className="font-extrabold text-lg tracking-wider">NP</span>
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden shadow-md shadow-brand-purple/10 border border-slate-200 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/logo.jpg"
+                alt="NayePankh Foundation Logo"
+                className="w-full h-full object-cover"
+              />
               {/* Subtle Wing Glow Accent */}
               <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-brand-yellow border-2 border-white animate-pulse" />
             </div>
