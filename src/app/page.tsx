@@ -42,14 +42,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative z-10 pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         {/* Background Image Integration */}
-        <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full z-0 pointer-events-none select-none hidden lg:block">
+        <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full z-0 pointer-events-none select-none">
           <img
             src="/ngo.webp"
             alt="Female student volunteer teaching underprivileged children in a slum classroom setting"
             className="w-full h-full object-cover object-center"
           />
           {/* Smooth linear gradient mask blending into the light background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent hidden lg:block" />
+          {/* Mobile view gradient mask overlay to ensure readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/15 via-slate-50/50 to-slate-50 lg:hidden" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
@@ -75,18 +77,6 @@ export default function Home() {
                   Underprivileged Lives
                 </span>
               </motion.h1>
-
-              {/* Mobile Hero Image */}
-              <motion.div
-                variants={itemVariants}
-                className="w-full lg:hidden my-6 rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-slate-200/50"
-              >
-                <img
-                  src="/ngo.webp"
-                  alt="Female student volunteer teaching underprivileged children in a slum classroom setting"
-                  className="w-full h-full object-cover object-center"
-                />
-              </motion.div>
 
               <motion.p
                 variants={itemVariants}
