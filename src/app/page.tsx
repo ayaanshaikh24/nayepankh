@@ -40,8 +40,21 @@ export default function Home() {
       <div className="absolute bottom-20 left-1/3 w-80 h-80 rounded-full bg-brand-yellow/5 blur-3xl pointer-events-none" />
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 md:pt-32 md:pb-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <section className="relative z-10 pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        {/* Background Image Integration */}
+        <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full z-0 pointer-events-none select-none">
+          <img
+            src="/ngo.webp"
+            alt="Female student volunteer teaching underprivileged children in a slum classroom setting"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Smooth linear gradient mask blending into the light background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent hidden lg:block" />
+          {/* Mobile view gradient mask overlay to ensure readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/95 to-slate-50 lg:hidden" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -149,8 +162,20 @@ export default function Home() {
       </section>
 
       {/* Live Impact Dashboard */}
-      <section className="py-16 bg-white relative z-10">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <section className="py-16 bg-white relative z-10 overflow-hidden">
+        {/* Subtle, low-opacity background image with a parallax-like effect */}
+        <div className="absolute inset-0 z-0 opacity-[0.06] pointer-events-none select-none">
+          <img
+            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop"
+            alt="Joyful ground-level distribution drive with children and volunteers"
+            className="w-full h-full object-cover object-center bg-fixed"
+          />
+          {/* Smooth radial-like gradients and edge masks to blend seamlessly into the white background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
               Real-Time Impact Dashboard
