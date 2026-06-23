@@ -27,10 +27,8 @@ export default function Navbar() {
 
   // Close mobile drawer on route change
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
-    }
-  }, [pathname, isMobileMenuOpen]);
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <>
